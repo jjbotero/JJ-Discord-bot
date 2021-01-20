@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { prefix, token } = require("./config.json");
+const prefix = require("./config.json");
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -13,7 +13,7 @@ client.on('message', msg => {
   } else if (msg.content.startsWith(`${prefix}friday`)) {
     msg.channel.send('https://www.youtube.com/watch?v=kfVsfOSbJY0');
   }
-  
+
 });
 
-client.login(token);
+client.login(process.env.token);
